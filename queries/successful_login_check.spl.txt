@@ -1,0 +1,3 @@
+index=* ("Failed password" OR "Accepted password")
+| table _time src_ip _raw
+| sort _time

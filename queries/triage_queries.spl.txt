@@ -1,0 +1,2 @@
+index=* "Failed password"
+| table _time src_ip _raw
