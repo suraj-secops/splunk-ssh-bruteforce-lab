@@ -1,8 +1,6 @@
-# Splunk-ssh-bruteforce-lab
+# Splunk SSH Brute Force Detection Lab
 SOC home lab project demonstrating SSH brute-force detection, Splunk alerting, log analysis, incident response triage, and containment using Kali Linux, Ubuntu, and Splunk Enterprise.
 
-
-# Splunk SSH Brute Force Detection Lab
 
 ## Overview
 
@@ -45,7 +43,7 @@ Splunk Enterprise on Windows 11
 
 ### Ubuntu VM
 - Installed and enabled SSH service
-- Enabled TCP port 22 for SSH communication ufw
+- Enabled TCP port 22 for SSH communication through UFW
 - Installed Splunk Universal Forwarder
 - Configured log forwarding to Splunk Enterprise
 
@@ -61,6 +59,8 @@ Splunk Enterprise on Windows 11
 ---
 
 ## Attack Simulation
+
+![Hydra Attack](screenshots/hydra_attack.png)
 
 Hydra was used from the Kali Linux VM to simulate an SSH brute-force attack against the Ubuntu VM.
 
@@ -96,6 +96,8 @@ index=* "Failed password"
 
 ## Alert Triage Performed
 
+![Alert Triage](screenshots/alert_triage.png)
+
 After the alert triggered in Splunk, investigation and triage steps were performed.
 
 ### Findings
@@ -107,12 +109,15 @@ After the alert triggered in Splunk, investigation and triage steps were perform
 - Successful login detected after failed attempts
 - Alert confirmed as True Positive
 
+![Successful Login Detection](screenshots/successful_login_detection.png)
+
 ---
 
 ## Incident Response Actions
 
 ### Containment
 - Blocked attacker IP address using firewall rules
+![UFW Containment](screenshots/ufw_containment.png)
 - Verified that attack activity stopped
 
 ### Investigation
@@ -140,7 +145,7 @@ Initially, the alert triggered repeatedly because:
 ## Skills Demonstrated
 
 - Splunk SIEM
-- Ubantu Log Analysis
+- Ubuntu Log Analysis
 - Splunk Universal Forwarder
 - Detection Engineering
 - Alert Triage
