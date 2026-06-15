@@ -105,12 +105,7 @@ A Splunk detection rule and alert were created to identify SSH brute-force attac
 ### SPL Query Example
 
 ```spl
-index=ssh_logs "Failed password"
-| rex field=_raw "from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
-| stats count by src_ip, user
-| where count > 5
-| eval severity="high"
-| table _time, src_ip, user, count, severity
+index=* "Failed password" | stats count by src_ip | where count > 5
 ```
 
 ### Alert Configuration
