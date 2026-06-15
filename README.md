@@ -203,7 +203,7 @@ sudo ufw reload
 
 ## Challenges Faced & Solutions
 
-### Challenge 1: Duplicate Alert Triggering
+### Challenge : Duplicate Alert Triggering
 **Problem:**
 - Alert triggered repeatedly for the same incident
 - Old logs were continuously re-searched
@@ -219,15 +219,6 @@ sudo ufw reload
 - Configured alert throttling to suppress duplicates for 10 minutes
 - Added deduplication logic in SPL query
 - Tested alert to verify single trigger per incident
-
-### Challenge 2: Log Forwarding Delays
-**Problem:**
-- Initial delays in log visibility in Splunk
-
-**Solution:**
-- Verified Splunk Universal Forwarder configuration
-- Checked network connectivity between Ubuntu and Splunk Enterprise
-- Confirmed inputs.conf settings were correct
 
 ---
 
